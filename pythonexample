@@ -1,0 +1,4 @@
+print("Wello world!")
+a = int(input("enter 2 digit number"))
+b = int(input("enter 2 digit number"))
+print(a + b)
