@@ -72,7 +72,7 @@ footer {
 <body>
 
 <h2>Gana Technologies</h2>
-<p>"“Gana technologies is a best software training institute,We are very pleased to introduce ourselves as the leading IT Training Institute from past 8 years, Trained many students and working professionals. We offer Training on various top and trending IT courses like DevOps, AWS, MS Azure, AWS DevOps, Azure DevOps,Google Cloud Platform,Python, power bi,linux admin,tableau,msbi,Data science,FullStack, and many other courses. We offer Classroom, Online and Corporate Trainings. All our Trainings are based on Realtime Standards with Advanced course curriculum. We believe in Technology has no Ending point." Aws training in Hyderabad Devops training in hyderabad Aws training in ameerpet Devops training in ameerpet"</p>
+<p>"Gana technologies is a best software training institute,We are very pleased to introduce ourselves as the leading IT Training Institute from past 8 years, Trained many students and working professionals. We offer Training on various top and trending IT courses like DevOps, AWS, MS Azure, AWS DevOps, Azure DevOps,Google Cloud Platform,Python, power bi,linux admin,tableau,msbi,Data science,FullStack, and many other courses. We offer Classroom, Online and Corporate Trainings. All our Trainings are based on Realtime Standards with Advanced course curriculum. We believe in Technology has no Ending point.</p>
 
 <header>
   <h2>Courses</h2>
