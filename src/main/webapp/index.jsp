@@ -45,7 +45,7 @@ button {
 </style>   
 </head>    
 <body>    
-    <center> <h1> Gana Technologies </h1> </center>   
+    <center> <h1> Rama Tech Masters </h1> </center>   
     <form>  
         <div class="container">   
             <label>Username : </label>   
