@@ -10,7 +10,7 @@ pipeline{
     stages{
         stage("Git Checkout"){
             steps{
-                git credentialsId: 'javahome2', url: 'https://github.com/srinicloud87/myweb.git'
+                it credentialsId: 'GIT_CRED', url: 'https://github.com/nckreddy1993/myweb.git'
             }
         }
         stage("Maven Build"){
@@ -21,36 +21,18 @@ pipeline{
         }
         stage('Upload War To Nexus'){
             steps{
-                  nexusArtifactUploader artifacts: [
-                       [
-                            artifactId: 'myweb', 
-                            classifier: '', 
-                            file: "target/myweb-8.2.0.war", 
-                            type: 'war'
-                       ]
-                  ], 
-                  credentialsId: 'nexus3', 
-                  groupId: 'in.javahome', 
-                  nexusUrl: '172.31.42.62:8081', 
-                  nexusVersion: 'nexus3', 
-                  protocol: 'http', 
-                  repository: 'sample-releases', 
-                  version: '8.2.0'  
-              }
+nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: 'target/myweb-8.2.0.war', type: 'war']], credentialsId: 'NEXUS_CRED', groupId: 'gana', nexusUrl: '172.31.17.157:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'sample-releases', version: '8.2.0'
             }
+}
         stage("deploy-dev"){
             steps{
-                sshagent(['tomcat-new']) {
-                sh """
-                    scp -o StrictHostKeyChecking=no target/myweb-8.2.0.war  ec2-user@172.31.37.181:/home/ec2-user/apache-tomcat-9.0.83/webapps/
-                    
-                    ssh ec2-user@172.31.37.181 /home/ec2-user/apache-tomcat-9.0.83/bin/shutdown.sh
-                    
-                    ssh ec2-user@172.31.37.181 /home/ec2-user/apache-tomcat-9.0.83/bin/startup.sh
-                
-                """
-            }
-            
+sshagent(['SHH_Agent']) {
+                 sh """
+                 scp -o StrictHostKeyChecking=no target/myweb-8.2.0.war ec2-user@172.31.20.88:/home/ec2-user/apache-tomcat-9.0.88/webapps
+                 ssh ec2-user@172.31.20.88 /home/ec2-user/apache-tomcat-9.0.88/bin/shutdown.sh
+                 ssh ec2-user@172.31.20.88 /home/ec2-user/apache-tomcat-9.0.88/bin/startup.sh
+                 sh """
+} 
             }
         }
     }
